@@ -29,7 +29,7 @@ Plug 'rohanorton/buffting.nvim'
 Or, my personal favourite, `packer`:
 
 ```lua
-pack({
+use({
   "rohanorton/buffting.nvim",
   requires = { "nvim-lua/plenary.nvim" }
 })
