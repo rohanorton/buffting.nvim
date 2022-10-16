@@ -12,3 +12,6 @@ noremap <silent> <Plug>buffting-jump-to-7 <cmd>lua require'buffting'.jump_to(7)<
 noremap <silent> <Plug>buffting-jump-to-8 <cmd>lua require'buffting'.jump_to(8)<Cr>
 noremap <silent> <Plug>buffting-jump-to-9 <cmd>lua require'buffting'.jump_to(9)<Cr>
 noremap <silent> <Plug>buffting-jump-to-10 <cmd>lua require'buffting'.jump_to(10)<Cr>
+
+noremap <silent> <Plug>buffting-jump-to-next <cmd>lua require'buffting'.next()<Cr>
+noremap <silent> <Plug>buffting-jump-to-prev <cmd>lua require'buffting'.prev()<Cr>

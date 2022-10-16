@@ -19,6 +19,18 @@ M.jump_to = function(idx)
   pcall(buffers.jump_to, idx)
 end
 
+M.next = function()
+  local buffers = Buffers()
+  -- Use pcall to ignore error (e.g. range error)
+  pcall(buffers.next)
+end
+
+M.prev = function()
+  local buffers = Buffers()
+  -- Use pcall to ignore error (e.g. range error)
+  pcall(buffers.prev)
+end
+
 -- TODO: setup function
 
 return M

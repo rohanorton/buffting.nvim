@@ -29,14 +29,36 @@ local function Buffers()
     end
   end
 
+  local function wrap(n)
+    return ((n - 1) % len()) + 1
+  end
+
+  local function _jump_to(idx)
+    check_range(idx)
+    buffers[idx].jump_to()
+  end
+
   local function get_name(idx)
     return buffers[idx].get_name()
   end
 
   function self.jump_to(idx)
     populate_buffers_list()
-    check_range(idx)
-    buffers[idx].jump_to()
+    _jump_to(idx)
+  end
+
+  function self.next()
+    populate_buffers_list()
+    local curr_idx = self.get_active_buffer_index()
+    local idx = wrap(curr_idx + 1)
+    _jump_to(idx)
+  end
+
+  function self.prev()
+    populate_buffers_list()
+    local curr_idx = self.get_active_buffer_index()
+    local idx = wrap(curr_idx - 1)
+    _jump_to(idx)
   end
 
   function self.get_names()
